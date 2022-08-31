@@ -9,3 +9,5 @@ class OmutsuSearchApplication
 fun main(args: Array<String>) {
 	runApplication<OmutsuSearchApplication>(*args)
 }
+
+//Todo: postgresの設定が足りない？（認証型10が…）
