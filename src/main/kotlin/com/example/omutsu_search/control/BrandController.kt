@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 class BrandController(private val brandService: BrandService) {
     @GetMapping("/test")
     fun test(): ResponseEntity<List<Brand>>{
-        val result = brandService.test()
+        val result = brandService.selectAll()
         return ResponseEntity.ok(result)
     }
 }

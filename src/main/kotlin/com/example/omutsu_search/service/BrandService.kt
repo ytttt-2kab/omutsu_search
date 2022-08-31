@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class BrandService(private val brandDao: BrandDao) {
-    fun test():List<Brand>{
-        return brandDao.test()
+    fun selectAll():List<Brand>{
+        return brandDao.selectAll()
     }
 }
