@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.omutsu_search.mapper.OmutsuPriceDataMapper">
+  <resultMap id="BaseResultMap" type="com.example.omutsu_search.model.OmutsuPriceData">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="reg_date" jdbcType="DATE" property="regDate" />
+    <id column="jan_code" jdbcType="VARCHAR" property="janCode" />
+    <result column="total_price" jdbcType="NUMERIC" property="totalPrice" />
+    <result column="price" jdbcType="NUMERIC" property="price" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_url" jdbcType="VARCHAR" property="shopUrl" />
+  </resultMap>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select reg_date, jan_code, total_price, price, shop_name, shop_url
+    from omutsu_price_data
+    where reg_date = #{regDate,jdbcType=DATE}
+      and jan_code = #{janCode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select reg_date, jan_code, total_price, price, shop_name, shop_url
+    from omutsu_price_data
+  </select>
+</mapper>
