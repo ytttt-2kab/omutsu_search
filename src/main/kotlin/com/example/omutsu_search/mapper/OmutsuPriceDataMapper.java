@@ -1,5 +1,6 @@
 package com.example.omutsu_search.mapper;
 
+import com.example.omutsu_search.model.OmutsuJan;
 import com.example.omutsu_search.model.OmutsuPriceData;
 import java.util.Date;
 import java.util.List;
@@ -15,4 +16,7 @@ public interface OmutsuPriceDataMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     List<OmutsuPriceData> selectAll();
+
+    List<OmutsuPriceData> selectByOmutsuJanList(@Param("omutsuJanList")List<String> omutsuJanList, @Param("regDate") Date regDate);
+
 }

@@ -5,9 +5,6 @@ import com.example.omutsu_search.service.BrandService
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
-
-//import org.springframework.web.bind.annotation.PostMapping
 
 @Controller
 class BrandController(private val brandService: BrandService) {

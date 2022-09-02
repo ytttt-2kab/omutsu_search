@@ -22,4 +22,13 @@
     select reg_date, jan_code, total_price, price, shop_name, shop_url
     from omutsu_price_data
   </select>
+  <select id="omutsuJanList" resultMap="BaseResultMap">
+    select reg_date, jan_code, total_price, price, shop_name, shop_url
+    from omutsu_price_data
+    where reg_date = #{regDate,jdbcType=DATE}
+    <foreach item="omutsuJans" collection="omutsuJanList" nullable="true"
+             open="AND jan_code in (" separator="," close=")" >
+      #{omutsuJans}
+    </foreach>
+  </select>
 </mapper>
