@@ -1,6 +1,5 @@
 package com.example.omutsu_search.mapper;
 
-import com.example.omutsu_search.model.OmutsuJan;
 import com.example.omutsu_search.model.OmutsuPriceData;
 import java.util.Date;
 import java.util.List;

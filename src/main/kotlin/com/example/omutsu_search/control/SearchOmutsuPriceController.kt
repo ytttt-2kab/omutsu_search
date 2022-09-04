@@ -1,6 +1,7 @@
 package com.example.omutsu_search.control
 
 import com.example.omutsu_search.model.OmutsuPriceData
+import com.example.omutsu_search.service.SearchOmutsuPriceService
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PostMapping
