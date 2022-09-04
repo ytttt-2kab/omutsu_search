@@ -3,8 +3,11 @@ package com.example.omutsu_search.mapper;
 import com.example.omutsu_search.model.OmutsuPriceData;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface OmutsuPriceDataMapper {
     /**
      * @mbg.generated generated automatically, do not modify!
