@@ -17,7 +17,8 @@ class BrandController(private val brandService: BrandService) {
     @GetMapping("/")
     fun test2(model: Model): String{
         val result = brandService.selectAll()
-        model.addAttribute("message", "qwertyu");
+//        model.addAttribute("message", "qwertyu");
+        model.addAttribute("result", result);
         return "index"
     }
 }

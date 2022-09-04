@@ -5,9 +5,15 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<h1>Springboot Hello Sample</h1>
-<p>
-    <span th:text="${message}"></span>!!!
-</p>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>名前</td>
+        </tr>
+        <tr th:each="brand: ${result}">
+            <td th:text="${brand.id}"></td>
+            <td th:text="${brand.name}"></td>
+        </tr>
+    </table>
 </body>
 </html>
