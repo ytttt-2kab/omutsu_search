@@ -4,6 +4,7 @@ import com.example.omutsu_search.model.OmutsuPriceData;
 import java.util.Date;
 import java.util.List;
 
+import dto.SearchResultDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,6 +20,6 @@ public interface OmutsuPriceDataMapper {
      */
     List<OmutsuPriceData> selectAll();
 
-    List<OmutsuPriceData> selectByOmutsuJanList(@Param("omutsuJanList")List<String> omutsuJanList, @Param("regDate") Date regDate);
+    List<SearchResultDto> selectByOmutsuJanList(@Param("omutsuJanList")List<String> omutsuJanList, @Param("regDate") Date regDate);
 
 }

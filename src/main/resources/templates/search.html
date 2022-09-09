@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>順位</td>
+            <td>1枚当たりの価格</td>
+            <td>店名</td>
+            <td>メーカー</td>
+            <td>名前</td>
+            <td>枚数</td>
+            <td>価格</td>
+        </tr>
+        <tr th:each="result: ${result}">
+            <td th:text="${result.rank}"></td>
+            <td th:text="${result.price}"></td>
+            <td th:text="${result.shopName}"></td>
+            <td th:text="${result.brand}"></td>
+            <td th:text="${result.name}"></td>
+            <td th:text="${result.count}"></td>
+            <td th:text="${result.totalPrice}"></td>
+        </tr>
+    </table>
+</body>
+</html>

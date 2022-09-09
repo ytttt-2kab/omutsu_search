@@ -34,6 +34,8 @@ public class OmutsuJan {
      */
     private Integer count;
 
+    private String name;
+
     public String getJanCode() {
         return janCode;
     }
@@ -72,5 +74,13 @@ public class OmutsuJan {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

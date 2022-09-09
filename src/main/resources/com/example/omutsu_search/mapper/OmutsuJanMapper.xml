@@ -8,16 +8,17 @@
     <result column="type_id" jdbcType="INTEGER" property="typeId" />
     <result column="size_id" jdbcType="INTEGER" property="sizeId" />
     <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count
+    select jan_code, brand_id, type_id, size_id, count, name
     from omutsu_jan
     where jan_code = #{janCode,jdbcType=VARCHAR}
   </select>
   <select id="selectById" parameterType="map" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count
+    select jan_code, brand_id, type_id, size_id, count, name
     from omutsu_jan
     where 1 = 1
     <if test="brand_id != null">
@@ -32,7 +33,7 @@
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count
+    select jan_code, brand_id, type_id, size_id, count, name
     from omutsu_jan
   </select>
 </mapper>
