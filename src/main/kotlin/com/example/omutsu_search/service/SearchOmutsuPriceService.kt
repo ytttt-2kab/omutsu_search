@@ -3,7 +3,7 @@ package com.example.omutsu_search.service
 import com.example.omutsu_search.dao.OmutsuJanDao
 import com.example.omutsu_search.dao.OmutsuPriceDataDao
 import com.example.omutsu_search.model.OmutsuPriceData
-import dto.SearchResultDto
+import com.example.omutsu_search.dto.SearchResultDto
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 

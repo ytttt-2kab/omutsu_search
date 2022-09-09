@@ -3,7 +3,7 @@ package com.example.omutsu_search.dao
 import com.example.omutsu_search.mapper.OmutsuPriceDataMapper
 import com.example.omutsu_search.model.OmutsuPriceData
 import com.example.omutsu_search.util.DateUtil
-import dto.SearchResultDto
+import com.example.omutsu_search.dto.SearchResultDto
 import org.springframework.stereotype.Repository
 import java.time.LocalDate
 

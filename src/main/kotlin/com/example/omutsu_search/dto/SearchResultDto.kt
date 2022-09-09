@@ -1,4 +1,4 @@
-package dto
+package com.example.omutsu_search.dto
 
 import java.time.LocalDate
 

@@ -4,7 +4,7 @@ import com.example.omutsu_search.model.OmutsuPriceData;
 import java.util.Date;
 import java.util.List;
 
-import dto.SearchResultDto;
+import com.example.omutsu_search.dto.SearchResultDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -36,15 +36,15 @@
     select reg_date, jan_code, total_price, price, shop_name, shop_url
     from omutsu_price_data
   </select>
-  <select id="omutsuJanList" resultMap="SearchResultMap">
-    select rank() as rank, d.reg_date as reg_date, d.jan_code as jan_code, d.total_price as total_price, d.price as price, d.shop_name as shop_name, d.shop_url as shop_url,
+  <select id="selectByOmutsuJanList" resultMap="SearchResultMap">
+    select rank() over(order by d.price) as rank, d.reg_date as reg_date, d.jan_code as jan_code, d.total_price as total_price, d.price as price, d.shop_name as shop_name, d.shop_url as shop_url,
       b.name as brand, s.name as size, t.name as type, j.count as count, j.name as name
     from omutsu_price_data as d, brand as b, size as s, type as t, omutsu_jan as j
     where d.reg_date = #{regDate,jdbcType=DATE}
     and d.jan_code = j.jan_code
-    and d.brand_id = b.id
-    and d.type_id = t.id
-    and d.size_id = s.id
+    and j.brand_id = b.id
+    and j.type_id = t.id
+    and j.size_id = s.id
     <foreach item="omutsuJans" collection="omutsuJanList" nullable="true"
              open="AND d.jan_code in (" separator="," close=")" >
       #{omutsuJans}

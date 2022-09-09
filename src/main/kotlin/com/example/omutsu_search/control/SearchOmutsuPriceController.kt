@@ -2,7 +2,7 @@ package com.example.omutsu_search.control
 
 import com.example.omutsu_search.model.OmutsuPriceData
 import com.example.omutsu_search.service.SearchOmutsuPriceService
-import dto.SearchResultDto
+import com.example.omutsu_search.dto.SearchResultDto
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
