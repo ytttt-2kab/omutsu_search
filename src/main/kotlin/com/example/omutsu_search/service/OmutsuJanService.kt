@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class OmutsuJanService(private val omutsuJanDao: OmutsuJanDao) {
-    fun selectAll():List<OmutsuJan>{
+    fun selectAll(): List<OmutsuJan>? {
         return omutsuJanDao.selectAll()
     }
 }

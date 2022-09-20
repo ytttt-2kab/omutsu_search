@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class TypeDao(private val typeMapper: TypeMapper) {
-    fun selectAll():List<Type>{
+    fun selectAll(): List<Type>? {
         return typeMapper.selectAll()
     }
 }

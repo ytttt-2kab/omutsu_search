@@ -7,11 +7,14 @@ import org.springframework.stereotype.Service
 import java.time.LocalDate
 
 @Service
-class SearchOmutsuPriceService (private val omutsuJanDao: OmutsuJanDao, private val omutsuPriceDataDao: OmutsuPriceDataDao) {
+class SearchOmutsuPriceService(
+    private val omutsuJanDao: OmutsuJanDao,
+    private val omutsuPriceDataDao: OmutsuPriceDataDao
+) {
     fun search(brand_id: Int, type_id: Int, size_id: Int, date: LocalDate): List<SearchResultDto>? {
         val omutsuJans = omutsuJanDao.selectById(brand_id, type_id, size_id)
-        val omutsuJanCodes = omutsuJans.map { obj -> return@map obj.janCode }
-        val result = omutsuPriceDataDao.selectByOmutsuJanList(omutsuJanCodes, date)
+        val omutsuJanCodes = omutsuJans?.map { obj -> return@map obj.janCode }
+        val result = omutsuJanCodes?.let { omutsuPriceDataDao.selectByOmutsuJanList(it, date) }
         return result
     }
 }

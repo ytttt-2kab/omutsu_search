@@ -8,14 +8,11 @@ import java.util.*
 
 @Mapper
 interface OmutsuPriceDataMapper {
-    /**
-     * @mbg.generated generated automatically, do not modify!
-     */
-    fun selectByPrimaryKey(@Param("regDate") regDate: Date, @Param("janCode") janCode: String): OmutsuPriceData?
+    fun selectByPrimaryKey(
+        @Param("regDate") regDate: Date,
+        @Param("janCode") janCode: String
+    ): OmutsuPriceData?
 
-    /**
-     * @mbg.generated generated automatically, do not modify!
-     */
     fun selectAll(): List<OmutsuPriceData>?
     fun selectByOmutsuJanList(
         @Param("omutsuJanList") omutsuJanList: List<String>,

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.omutsu_search.mapper.OmutsuJanMapper">
-  <resultMap id="BaseResultMap" type="com.example.omutsu_search.model.OmutsuJan">
-    <!-- @mbg.generated: generated automatically, do not modify! -->
-    <id column="jan_code" jdbcType="VARCHAR" property="janCode" />
-    <result column="brand_id" jdbcType="INTEGER" property="brandId" />
-    <result column="type_id" jdbcType="INTEGER" property="typeId" />
-    <result column="size_id" jdbcType="INTEGER" property="sizeId" />
-    <result column="count" jdbcType="INTEGER" property="count" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-  </resultMap>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count, name
-    from omutsu_jan
-    where jan_code = #{janCode,jdbcType=VARCHAR}
-  </select>
-  <select id="selectById" parameterType="map" resultMap="BaseResultMap">
-    <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count, name
-    from omutsu_jan
-    where 1 = 1
-    <if test="brand_id != null">
-      and brand_id = #{brand_id,jdbcType=INTEGER}
-    </if>
-    <if test="type_id != null">
-      and type_id = #{type_id,jdbcType=INTEGER}
-    </if>
-    <if test="size_id != null">
-      and size_id = #{size_id,jdbcType=INTEGER}
-    </if>
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    <!-- @mbg.generated: generated automatically, do not modify! -->
-    select jan_code, brand_id, type_id, size_id, count, name
-    from omutsu_jan
-  </select>
+    <resultMap id="BaseResultMap" type="com.example.omutsu_search.model.OmutsuJan">
+        <!-- @mbg.generated: generated automatically, do not modify! -->
+        <id column="jan_code" jdbcType="VARCHAR" property="janCode"/>
+        <result column="brand_id" jdbcType="INTEGER" property="brandId"/>
+        <result column="type_id" jdbcType="INTEGER" property="typeId"/>
+        <result column="size_id" jdbcType="INTEGER" property="sizeId"/>
+        <result column="count" jdbcType="INTEGER" property="count"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!-- @mbg.generated: generated automatically, do not modify! -->
+        select jan_code, brand_id, type_id, size_id, count, name
+        from omutsu_jan
+        where jan_code = #{janCode,jdbcType=VARCHAR}
+    </select>
+    <select id="selectById" parameterType="map" resultMap="BaseResultMap">
+        <!-- @mbg.generated: generated automatically, do not modify! -->
+        select jan_code, brand_id, type_id, size_id, count, name
+        from omutsu_jan
+        where 1 = 1
+        <if test="brand_id != null">
+            and brand_id = #{brand_id,jdbcType=INTEGER}
+        </if>
+        <if test="type_id != null">
+            and type_id = #{type_id,jdbcType=INTEGER}
+        </if>
+        <if test="size_id != null">
+            and size_id = #{size_id,jdbcType=INTEGER}
+        </if>
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        <!-- @mbg.generated: generated automatically, do not modify! -->
+        select jan_code, brand_id, type_id, size_id, count, name
+        from omutsu_jan
+    </select>
 </mapper>
