@@ -5,6 +5,6 @@ import org.apache.ibatis.annotations.Mapper
 
 @Mapper
 interface BrandMapper {
-    fun selectByPrimaryKey(id: Int): Brand?
-    fun selectAll(): List<Brand>?
+    fun selectByPrimaryKey(id: Int): Brand
+    fun selectAll(): List<Brand>
 }

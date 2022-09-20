@@ -10,11 +10,11 @@ class DateUtil {
     companion object {
         private val DATE_FORMAT = "yyyy-MM-dd"
 
-        fun string2LocalDate(date: String?): LocalDate? {
+        fun string2LocalDate(date: String): LocalDate {
             return LocalDate.parse(date, DateTimeFormatter.ofPattern(DATE_FORMAT))
         }
 
-        fun date2LocalDate(date: Date): LocalDate? {
+        fun date2LocalDate(date: Date): LocalDate {
             return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
         }
 

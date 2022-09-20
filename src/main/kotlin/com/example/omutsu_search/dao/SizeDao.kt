@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class SizeDao(private val sizeMapper: SizeMapper) {
-    fun selectAll(): List<Size>? {
+    fun selectAll(): List<Size> {
         return sizeMapper.selectAll()
     }
 }

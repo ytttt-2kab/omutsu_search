@@ -11,11 +11,11 @@ interface OmutsuPriceDataMapper {
     fun selectByPrimaryKey(
         @Param("regDate") regDate: Date,
         @Param("janCode") janCode: String
-    ): OmutsuPriceData?
+    ): OmutsuPriceData
 
-    fun selectAll(): List<OmutsuPriceData>?
+    fun selectAll(): List<OmutsuPriceData>
     fun selectByOmutsuJanList(
         @Param("omutsuJanList") omutsuJanList: List<String>,
         @Param("regDate") regDate: Date
-    ): List<SearchResultDto>?
+    ): List<SearchResultDto>
 }

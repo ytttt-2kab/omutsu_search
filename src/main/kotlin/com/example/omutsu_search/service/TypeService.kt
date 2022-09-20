@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class TypeService(private val typeDao: TypeDao) {
-    fun selectAll(): List<Type>? {
+    fun selectAll(): List<Type> {
         return typeDao.selectAll()
     }
 }

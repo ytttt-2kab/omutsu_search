@@ -18,7 +18,7 @@ class SearchOmutsuPriceController(private val searchOmutsuPriceService: SearchOm
         @RequestParam type_id: Int,
         @RequestParam size_id: Int,
         @RequestParam date: LocalDate
-    ): ResponseEntity<List<SearchResultDto>?> {
+    ): ResponseEntity<List<SearchResultDto>> {
         val result = searchOmutsuPriceService.search(brand_id, type_id, size_id, date)
         return ResponseEntity.ok(result)
     }

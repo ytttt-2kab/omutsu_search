@@ -5,6 +5,6 @@ import org.apache.ibatis.annotations.Mapper
 
 @Mapper
 interface TypeMapper {
-    fun selectByPrimaryKey(id: Int): Type?
-    fun selectAll(): List<Type>?
+    fun selectByPrimaryKey(id: Int): Type
+    fun selectAll(): List<Type>
 }

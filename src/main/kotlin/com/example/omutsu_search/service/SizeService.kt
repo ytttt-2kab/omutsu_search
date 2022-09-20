@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class SizeService(private val sizeDao: SizeDao) {
-    fun selectAll(): List<Size>? {
+    fun selectAll(): List<Size> {
         return sizeDao.selectAll()
     }
 }

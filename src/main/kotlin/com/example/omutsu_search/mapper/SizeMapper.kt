@@ -5,6 +5,6 @@ import org.apache.ibatis.annotations.Mapper
 
 @Mapper
 interface SizeMapper {
-    fun selectByPrimaryKey(id: Int): Size?
-    fun selectAll(): List<Size>?
+    fun selectByPrimaryKey(id: Int): Size
+    fun selectAll(): List<Size>
 }
