@@ -12,17 +12,17 @@
   </resultMap>
   <resultMap id="SearchResultMap" type="com.example.omutsu_search.dto.SearchResultDto">
     <id column="rank" jdbcType="INTEGER" property="rank" />
-    <result column="reg_date" jdbcType="DATE" property="regDate" />
-    <result column="jan_code" jdbcType="VARCHAR" property="janCode" />
+    <id column="reg_date" jdbcType="DATE" property="regDate" />
+    <id column="jan_code" jdbcType="VARCHAR" property="janCode" />
     <result column="total_price" jdbcType="NUMERIC" property="totalPrice" />
     <result column="price" jdbcType="NUMERIC" property="price" />
     <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
     <result column="shop_url" jdbcType="VARCHAR" property="shopUrl" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
     <result column="size" jdbcType="VARCHAR" property="size" />
     <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="brand" jdbcType="VARCHAR" property="brand" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -37,11 +37,13 @@
     from omutsu_price_data
   </select>
   <select id="selectByOmutsuJanList" resultMap="SearchResultMap">
-    select rank() over(order by d.price) as rank, d.reg_date as reg_date, d.jan_code as jan_code, d.total_price as total_price, d.price as price, d.shop_name as shop_name, d.shop_url as shop_url,
+    select rank() over(order by d.price) as rank, d.reg_date as reg_date, d.jan_code as jan_code,
+      d.total_price as total_price, d.price as price, d.shop_name as shop_name, d.shop_url as shop_url,
       b.name as brand, s.name as size, t.name as type, j.count as count, j.name as name
     from omutsu_price_data as d, brand as b, size as s, type as t, omutsu_jan as j
-    where d.reg_date = #{regDate,jdbcType=DATE}
-    and d.jan_code = j.jan_code
+    where d.jan_code = j.jan_code
+    <!-- Todo: 日付の絞り込みを追加 -->
+    <!--    and d.reg_date = #{regDate,jdbcType=DATE}-->
     and j.brand_id = b.id
     and j.type_id = t.id
     and j.size_id = s.id

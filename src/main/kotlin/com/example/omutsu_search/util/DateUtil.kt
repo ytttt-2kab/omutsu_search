@@ -18,7 +18,7 @@ class DateUtil {
             return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
         }
 
-        fun localDate2Date(localDate: LocalDate): Date? {
+        fun localDate2Date(localDate: LocalDate): Date {
             return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant())
         }
     }

@@ -3,16 +3,16 @@ package com.example.omutsu_search.dto
 import java.time.LocalDate
 
 data class SearchResultDto(
-    var rank: Int,
-    var size: String,
-    var type: String,
-    var brand: String,
-    var janCode: String,
-    var name: String,
-    var count: Int,
-    var totalPrice: Float,
-    var price: Float,
-    var shopName: String,
-    var shopUrl: String,
-    var regDate: LocalDate
+    val rank: Int,
+    val regDate: LocalDate,
+    val janCode: String,
+    val totalPrice: Float,
+    val price: Float,
+    val shopName: String,
+    val shopUrl: String,
+    val brand: String,
+    val size: String,
+    val type: String,
+    val count: Int,
+    val name: String,
 )

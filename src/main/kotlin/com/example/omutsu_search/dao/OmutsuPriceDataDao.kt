@@ -9,11 +9,13 @@ import java.time.LocalDate
 
 @Repository
 class OmutsuPriceDataDao(private val omutsuPriceDataMapper: OmutsuPriceDataMapper) {
-    fun selectAll():List<OmutsuPriceData>{
-        return omutsuPriceDataMapper.selectAll()
+    fun selectAll():List<OmutsuPriceData>?{
+        var ret = omutsuPriceDataMapper.selectAll()
+        return ret
     }
 
-    fun selectByOmutsuJanList(omutsuJanList: List<String>, regDate: LocalDate):List<SearchResultDto>{
-        return omutsuPriceDataMapper.selectByOmutsuJanList(omutsuJanList, DateUtil.localDate2Date(regDate))
+    fun selectByOmutsuJanList(omutsuJanList: List<String>, regDate: LocalDate):List<SearchResultDto>?{
+        var ret = omutsuPriceDataMapper.selectByOmutsuJanList(omutsuJanList, DateUtil.localDate2Date(regDate))
+        return ret
     }
 }
