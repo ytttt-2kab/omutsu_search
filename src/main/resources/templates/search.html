@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hello</title>
+    <title>おむつ最安値検索</title>
     <meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <table>
+    <h3>おむつ最安値検索</h3>
+    <table class="table">
         <tr>
-            <td>順位</td>
-            <td>1枚当たりの価格</td>
-            <td>店名</td>
-            <td>メーカー</td>
-            <td>名前</td>
-            <td>枚数</td>
-            <td>価格</td>
+            <th class="col-1">順位</th>
+            <th class="col-3">1枚当たりの価格</th>
+            <th class="col-4">店名<br>メーカー<br>名前</th>
+            <th class="col-4">価格<br>枚数</th>
         </tr>
         <tr th:each="result: ${result}">
-            <td th:text="${result.rank}"></td>
-            <td th:text="${result.price}"></td>
-            <td th:text="${result.shopName}"></td>
-            <td th:text="${result.brand}"></td>
-            <td th:text="${result.name}"></td>
-            <td th:text="${result.count}"></td>
-            <td th:text="${result.totalPrice}"></td>
+            <th th:text="${result.rank}"></th>
+            <td th:text="${result.price}+'円'"></td>
+            <td>
+                <a th:href="${result.shopUrl}">
+                    <th:block th:text="${result.shopName}" /><br />
+                    <th:block th:text="${result.brand}" /><br />
+                    <th:block th:text="${result.name}" />
+                </a>
+            </td>
+            <td>
+                <th:block th:text="${result.totalPrice}+'円'" /><br />
+                <th:block th:text="${result.count}+'枚'" />
+            </td>
         </tr>
     </table>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
