@@ -6,8 +6,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h3>おむつ最安値検索</h3>
-<div class="btn-group btn-group-toggle"  data-toggle="buttons" role="group" aria-label="brands">
+<h3 class="mt-1 ml-1 mb-1">おむつ最安値検索</h3>
+<div class="btn-group btn-group-toggle ml-1 mb-1"  data-toggle="buttons" role="group" aria-label="brands">
     <label class="btn btn-primary active">
         <input type="radio" name="brands" id="0" autocomplete="off" checked>全て
     </label>
@@ -17,14 +17,14 @@
         </label>
     </th:block>
 </div>
-<div class="btn-group btn-group-toggle" data-toggle="buttons" role="group" aria-label="sizes">
+<div class="btn-group btn-group-toggle ml-1 mb-1" data-toggle="buttons" role="group" aria-label="sizes">
     <th:block th:each="size, stat: ${sizes}">
         <label class="btn btn-primary">
             <input type="radio" name="sizes" th:id="${size.id}" autocomplete="off" th:checked="${stat.index}==0"><th:block th:text="${size.name}"/>
         </label>
     </th:block>
 </div>
-<div class="btn-group btn-group-toggle" data-toggle="buttons" role="group" aria-label="types">
+<div class="btn-group btn-group-toggle ml-1 mb-1" data-toggle="buttons" role="group" aria-label="types">
     <th:block th:each="type, stat: ${types}">
         <label class="btn btn-primary">
             <input type="radio" name="types" th:id="${type.id}" autocomplete="off" th:checked="${stat.index}==0"><th:block th:text="${type.name}"/>
@@ -32,7 +32,7 @@
     </th:block>
 </div>
 
-<table class="table">
+<table class="table ml-1 col-11">
     <tr>
         <th class="col-1">順位</th>
         <th class="col-3">1枚当たりの価格</th>
