@@ -16,5 +16,6 @@
         <!-- @mbg.generated: generated automatically, do not modify! -->
         select id, name
         from brand
+        order by id
     </select>
 </mapper>

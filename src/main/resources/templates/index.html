@@ -7,6 +7,31 @@
 </head>
 <body>
 <h3>おむつ最安値検索</h3>
+<div class="btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-primary active">
+        <input type="radio" name="brands" id="0" autocomplete="off" checked>全て
+    </label>
+    <th:block th:each="brands: ${brands}">
+        <label class="btn btn-primary">
+            <input type="radio" name="brands" th:id="${brands.id}" autocomplete="off"><th:block th:text="${brands.name}"/>
+        </label>
+    </th:block>
+</div>
+<div class="btn-group-toggle" data-toggle="buttons">
+    <th:block th:each="size, stat: ${sizes}">
+        <label class="btn btn-primary">
+            <input type="radio" name="sizes" th:id="${size.id}" autocomplete="off" th:checked="${stat.index}==0"><th:block th:text="${size.name}"/>
+        </label>
+    </th:block>
+</div>
+<div class="btn-group-toggle" data-toggle="buttons">
+    <th:block th:each="type, stat: ${types}">
+        <label class="btn btn-primary">
+            <input type="radio" name="types" th:id="${type.id}" autocomplete="off" th:checked="${stat.index}==0"><th:block th:text="${type.name}"/>
+        </label>
+    </th:block>
+</div>
+
 <table class="table">
     <tr>
         <th class="col-1">順位</th>

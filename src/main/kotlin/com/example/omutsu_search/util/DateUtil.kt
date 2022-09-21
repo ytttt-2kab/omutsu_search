@@ -5,7 +5,6 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-
 class DateUtil {
     companion object {
         private val DATE_FORMAT = "yyyy-MM-dd"
